@@ -3,7 +3,6 @@
   "jest": {
       "scripts": {
           "coverage": "jest --coverage --coverageReporters=cobertura"
-      },
-      "verbose": true
+      }
   }
 }
