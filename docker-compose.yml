@@ -1,22 +1,14 @@
 version: '3'
 
 services:
-  selenium:
-    container_name: selenium
+  chromedriver:
+    image: robcherry/docker-chromedriver
+    privileged: true
+    restart: always
     environment:
-      - CHROME_VERSION=83.0.0
-      - NO_PROXY=127.0.0.1,localhost,.domain.tld
-      - START_XVFB=false
-    healthcheck:
-      interval: 15s
-      retries: 3
-      timeout: 30s
-      test: "/opt/bin/check-grid.sh --host selenium --port 4444"
-    image: selenium/standalone-chrome:3.141.59-selenium
-    ports:
-      - "4444:4444"
-    logging:
-      driver: "none"
+      - CHROMEDRIVER_WHITELISTED_IPS=''
+    # ports:
+    #   - '4444:4444'
 
   test:
     image: nixel2007/docker-selenium-side-runner
