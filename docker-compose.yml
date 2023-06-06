@@ -10,7 +10,7 @@ services:
     # ports:
     #   - '4444:4444'
 
-  selenium-side-runner:
+  test:
     image: nixel2007/docker-selenium-side-runner
     # build:
     #   context: .
