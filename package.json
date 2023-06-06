@@ -1,3 +1,5 @@
-  "scripts": {
+{
+"scripts": {
     "coverage": "jest --coverage --coverageReporters=cobertura"
-  },
+  }
+}
