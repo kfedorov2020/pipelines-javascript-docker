@@ -26,4 +26,4 @@ stages:
         containerregistrytype: 'Container Registry'
         dockerComposeFile: 'docker-compose.yml'
         action: 'Run a Docker Compose command'
-        dockerComposeCommand: 'up --force-recreat'
+        dockerComposeCommand: 'up --timeout 10'
