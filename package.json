@@ -1,5 +1,9 @@
 {
-  "scripts": {
-    "test": "jest --maxWorkers=3 --colors --coverage"
+  "name": "my-project",
+  "jest": {
+      "scripts": {
+          "coverage": "jest --coverage --coverageReporters=cobertura"
+      },
+    "verbose": true
   }
 }
