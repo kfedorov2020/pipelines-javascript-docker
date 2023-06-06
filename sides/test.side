@@ -1,0 +1,74 @@
+{
+  "id": "45ffc366-b4ef-4276-b15f-1aa4b3e5d869",
+  "version": "2.0",
+  "name": "test",
+  "url": "https://www.selenium.dev",
+  "tests": [{
+    "id": "9af7bed1-6b9e-4327-8c4a-053c82c53dae",
+    "name": "test 1",
+    "commands": [{
+      "id": "26bd783e-c602-48dc-a1d6-1179cd3708e1",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aced9d76-3eb2-42b4-a25c-3ea9bcaa2029",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1489x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ec1cd57b-e306-4ef6-b2de-ea33415cb0e7",
+      "comment": "",
+      "command": "click",
+      "target": "id=navbarDropdown",
+      "targets": [
+        ["id=navbarDropdown", "id"],
+        ["linkText=About", "linkText"],
+        ["css=.nav-item:nth-child(2) > #navbarDropdown", "css:finder"],
+        ["xpath=//a[contains(text(),'About')]", "xpath:link"],
+        ["xpath=//a[@id='navbarDropdown']", "xpath:attributes"],
+        ["xpath=//div[@id='main_navbar']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'About')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eced50be-882b-4f11-8629-81abf3c8532c",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=About Selenium",
+      "targets": [
+        ["linkText=About Selenium", "linkText"],
+        ["css=.show > .dropdown-item:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'About Selenium')]", "xpath:link"],
+        ["xpath=//div[@id='main_navbar']/ul/li[2]/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/about')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'About Selenium')]", "xpath:innerText"]
+      ],
+      "value": "About Selenium"
+    }, {
+      "id": "a468e430-8d46-4b45-91f8-63c991d33143",
+      "comment": "",
+      "command": "assertSelectedValue",
+      "target": "linkText=About Selenium",
+      "targets": [],
+      "value": "xxxx"
+    }]
+  }],
+  "suites": [{
+    "id": "fc357116-782e-4c55-b965-156a9c0b00ff",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["9af7bed1-6b9e-4327-8c4a-053c82c53dae"]
+  }],
+  "urls": ["https://www.selenium.dev/"],
+  "plugins": []
+}
