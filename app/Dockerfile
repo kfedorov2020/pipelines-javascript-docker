@@ -1,15 +1,14 @@
-# syntax=docker/dockerfile:1
+FROM node:10-alpine
 
-FROM node:12.18.1
-ENV NODE_ENV=production
+RUN npm install -g selenium-side-runner
 
-WORKDIR /app
+ADD docker-entrypoint.sh /opt/bin/docker-entrypoint.sh
+RUN chmod +x /opt/bin/docker-entrypoint.sh
 
-COPY ["package.json", "package-lock.json*", "./"]
+RUN mkdir /sides
 
-RUN npm install --production
+WORKDIR /root
 
-COPY . .
+VOLUME [ "/sides" ]
 
-EXPOSE 8080
-CMD [ "node", "server.js" ]
+CMD "/opt/bin/docker-entrypoint.sh"
