@@ -1,0 +1,65 @@
+{
+  "id": "a40018a2-b603-4d38-b53b-7f64850f3794",
+  "version": "2.0",
+  "name": "passing test",
+  "url": "https://hub.docker.com",
+  "tests": [{
+    "id": "0799fcdf-92d6-4280-86b6-879628e00ecd",
+    "name": "passing test",
+    "commands": [{
+      "id": "d7897b48-65ef-4412-b17b-d5c9573ab025",
+      "comment": "",
+      "command": "open",
+      "target": "/r/nixel2007/docker-selenium-side-runner/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3459a3b8-2083-4bec-aeb3-267fe8fa67bf",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1473x1032",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b70f8e77-9c5f-49a1-9de9-2212c6052529",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=nixel2007",
+      "targets": [
+        ["linkText=nixel2007", "linkText"],
+        ["css=.css-4je8tz", "css:finder"],
+        ["xpath=//a[contains(text(),'nixel2007')]", "xpath:link"],
+        ["xpath=//div[@id='mainContainer']/div/div/div[2]/div/div/div[2]/div[2]/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/u/nixel2007')]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'nixel2007')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b12d8a90-87e3-4b4e-b999-8ae00333434b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Starred",
+      "targets": [
+        ["linkText=Starred", "linkText"],
+        ["css=.MuiButtonBase-root:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Starred')]", "xpath:link"],
+        ["xpath=//div[@id='mainContainer']/div/div/div/div/div[2]/div/div/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/u/nixel2007/starred')]", "xpath:href"],
+        ["xpath=//div/div/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Starred')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "d3dc6275-33ab-49c8-8a1e-2a6c8bfeb8ab",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["0799fcdf-92d6-4280-86b6-879628e00ecd"]
+  }],
+  "urls": ["https://hub.docker.com/"],
+  "plugins": []
+}
