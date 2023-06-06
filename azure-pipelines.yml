@@ -20,30 +20,17 @@ stages:
         containerregistrytype: 'Container Registry'
         dockerComposeFile: 'docker-compose.yml'
         action: 'Run a Docker Compose command'
-        dockerComposeCommand: 'up --abort-on-container-exit --exit-code-from test'
-        
-    - task: geeklearningio.gl-vsts-tasks-yarn.yarn-task.Yarn@2
-      displayName: 'Install dependencies'
+        dockerComposeCommand: 'up --abort-on-container-exit --exit-code-from test'     
+    - task: NodeTool@0
       inputs:
-        Arguments: install --no-progress
-    - task: geeklearningio.gl-vsts-tasks-yarn.yarn-task.Yarn@2
-      displayName: 'Unit tests'
-      inputs:
-        Arguments: 'test --ci --reporters=jest-junit --reporters=default --coverage --coverageReporters=cobertura'
-      continueOnError: true # Test failures should be published before failing the build
-    - task: PublishTestResults@2
-      displayName: 'Publish Jest Unit Test Results'
-      inputs:
-        testResultsFiles: junit.xml
-        mergeTestResults: true
-        testRunTitle: 'Jest Unit Tests'
-        failTaskOnFailedTests: true
+        versionSpec: '10.x'
+      displayName: 'Install Node.js'
+    - script: |
+        npm install
+        npm run coverage
+      displayName: 'npm install and output coverage'
     - task: PublishCodeCoverageResults@1
-      displayName: 'Publish code coverage from Jest tests'
       inputs:
         codeCoverageTool: Cobertura
-        summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml'
-        # reportDirectory: '$(System.DefaultWorkingDirectory)/coverage'
-        failIfCoverageEmpty: true
-  
-   
+        summaryFileLocation: $(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml
+ 
