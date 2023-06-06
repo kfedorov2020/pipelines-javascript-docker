@@ -16,9 +16,9 @@
       "html"
     ],
     "collectCoverageFrom": [
-      "src/**/*.js",
-      "src/**/*.ts",
-      "src/**/*.tsx",
+      **/*.js",
+      **/*.ts",
+      **/*.tsx",
       "!/node_modules/"
     ],
     "transform": {
