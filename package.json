@@ -27,6 +27,9 @@
       "<rootDir>/node_modules/",
       "<rootDir>/build/"
     ],
+    "testMatch": [
+        "**/?(*.)+(spec|passing test).json"
+      ],
     "reporters": [
       "default",
       [
