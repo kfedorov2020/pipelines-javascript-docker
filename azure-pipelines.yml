@@ -21,21 +21,15 @@ stages:
         dockerComposeFile: 'docker-compose.yml'
         action: 'Run a Docker Compose command'
         dockerComposeCommand: 'up --abort-on-container-exit --exit-code-from test'     
-    - task: Npm@1
-      displayName: 'npm test'
+    - task: NodeTool@0
       inputs:
-        command: custom
-        verbose: false
-        customCommand: 'run test:ci'
-    - task: PublishTestResults@2
-      displayName: 'Publish Test Results '
-      inputs:
-        testResultsFiles: test/junit.xml
-      condition: succeededOrFailed()
+        versionSpec: '10.x'
+      displayName: 'Install Node.js'
+    - script: |
+        npm install
+        npm run coverage
+      displayName: 'npm install and output coverage'
     - task: PublishCodeCoverageResults@1
-      displayName: 'Publish code coverage results'
       inputs:
         codeCoverageTool: Cobertura
-        summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml'
-      condition: succeededOrFailed()
- 
+        summaryFileLocation: $(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml
