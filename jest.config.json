@@ -1,3 +1,10 @@
-{
-  "coverageReporters": ["json", "lcov", "text", "clover", "cobertura"]
-}
+module.exports = {
+    testMatch: [
+        '**/?(*.)+(spec|test).json'    // Include JSON test files
+      ],
+    reporters: [
+        'default',
+        ['jest-junit', { outputDirectory: './junit-results', outputName: 'test-results.xml' }]
+      ]
+  };
+  
