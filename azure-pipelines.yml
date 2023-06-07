@@ -27,6 +27,6 @@ stages:
       displayName: 'Install Node.js'
     - script: |
         npm install
-        npm test 
+        npx jest --ci --reporters=default --reporters=jest-junit
       displayName: 'npm install and output coverage'
 
